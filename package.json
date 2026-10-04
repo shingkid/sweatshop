@@ -1,0 +1,8 @@
+{
+  "name": "sweatshop",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "engines": { "node": ">=26" },
+  "scripts": { "test": "node --test src/*.test.mjs", "check": "node --check src/cli.mjs && node --check src/adapter.mjs" }
+}
