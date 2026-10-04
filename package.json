@@ -4,5 +4,9 @@
   "type": "module",
   "version": "0.1.0",
   "engines": { "node": ">=26" },
-  "scripts": { "test": "node --test src/*.test.mjs", "check": "node --check src/cli.mjs && node --check src/adapter.mjs" }
+  "scripts": {
+    "test": "node --test src/*.test.mjs",
+    "check": "node scripts/check.mjs",
+    "smoke:control": "node scripts/control-smoke.mjs"
+  }
 }
