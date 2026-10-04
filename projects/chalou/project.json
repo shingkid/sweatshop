@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "repository": "shingkid/chalou",
+  "account": "shingkid",
+  "remote": "git@tomoro:shingkid/chalou.git",
+  "baseBranch": "main",
+  "eligibleLabel": "ready-for-agent",
+  "allowedPaths": [
+    "src/domain/",
+    "tests/domain/"
+  ],
+  "maxAttempts": 2,
+  "maxDurationMs": 1800000,
+  "workerTimeoutMs": 600000,
+  "checkTimeoutMs": 120000,
+  "maxTasksPerTick": 1,
+  "id": "chalou",
+  "protectedPaths": [
+    "tests/"
+  ],
+  "checks": [
+    {
+      "name": "typecheck",
+      "command": "{node}",
+      "args": [
+        "{project}/checks/typecheck.mjs"
+      ],
+      "readablePaths": [
+        "{repo}/node_modules"
+      ]
+    },
+    {
+      "name": "regressions",
+      "command": "{node}",
+      "args": [
+        "{project}/checks/regressions.mjs"
+      ],
+      "readablePaths": []
+    }
+  ]
+}
